@@ -1,11 +1,12 @@
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 class PrimitivesTest {
 
-	@Test
 	@Disabled
+	@Test
 	void dataTypeTest() {
 		int b = 10;
 		short a = 20;
@@ -18,8 +19,8 @@ class PrimitivesTest {
 		assertEquals(10, a);
 	}
 
-	@Test
 	@Disabled
+	@Test
 	void operatotTest() {
 		int number = 123;
 		assertEquals(3, getTirdDigit(number));
