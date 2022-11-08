@@ -43,7 +43,7 @@ class PrimitivesTest {
 	@Test
 	@Disabled
 	void getBitValueTest() {
-		long number = 0x3ab7f5; // 001110101011011111_1_10101
+		long number = 0x3ab7f5; // 001110101011011111_1_1010_1
 		assertEquals(1, BitOperations.getBitValue(number, 5));
 		assertEquals(0, BitOperations.getBitValue(number, 11));
 		assertEquals(0, BitOperations.getBitValue(number, 1));
