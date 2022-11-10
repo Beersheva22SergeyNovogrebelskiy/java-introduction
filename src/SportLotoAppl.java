@@ -8,43 +8,19 @@ public class SportLotoAppl {
 	 */
 	public static void main(String[] args) {
 		int count = 0;
-		Long check = 0l;
+		long check = 0l;
 		do {
 			int number = getRandomInt(1, 49);
 			if (0 == BitOperations.getBitValue(check, number)) {
 				check = BitOperations.setBitValue(check, number, true);
-				//System.out.println(Long.toBinaryString(check));
 				count++;
 				System.out.print(number + " ");
 			} 
 		} while (count < 6);
 		
-		
-/*		int num1 = 0, num2 = 0, num3 = 0, num4 = 0, num5 = 0, num6 =  0, temp;
-		for (int i = 0; i < 6; i++) {
-			num6 = num5;
-			num5 = num4;
-			num4 = num3;
-			num3 = num2;
-			num2 = num1;
-			temp = getRandomInt(1, 49);
-			if((temp != num2) && (temp != num3)&& (temp != num4)&& (temp != num5)&& (temp != num6)) {
-				num1 = temp;
-			} else {
-				while((temp == num2) || (temp == num3) || (temp == num4) || (temp == num5) || (temp == num6)) {
-					temp = getRandomInt(1, 49);
-				}
-				num1 = temp;
-			}	
-		}
-		System.out.println(num1 + " " + num2 + " " + num3 + " " + num4 + " " + num5 + " " +num6);
-*/		
 	}
 	
 	public static int getRandomInt(int min, int max) {
 		return (int) (min + Math.random() * (max -min + 1));
 	}
-	
-	
-
 }

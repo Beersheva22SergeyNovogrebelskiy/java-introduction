@@ -78,19 +78,62 @@ class PrimitivesTest {
 	}
 	
 	@Test
+	@Disabled
 	void digitsNumberTest() {
 		assertEquals(16, BitOperations.onesInNumber(0x3ab7f5));
 		assertEquals(1, BitOperations.onesInNumber(0x1));
 	}
 	
 	@Test
+	@Disabled
 	void leadingZerosTest() {
 		assertEquals(42, BitOperations.leadingZeros(0x3ab7f5));
 		assertEquals(63, BitOperations.leadingZeros(0x1));
 	}
 	@Test
+	@Disabled
 	void isHappyNumberTest() {
 	assertEquals(true, Numbers.sHappyNumber(123015));
 	}
 	
+	@Test
+	void getDigitsTest() {
+		int expected[] = {1, 2, 3, 4};
+		assertArrayEquals(expected, Numbers.getDigits(1234));
+	}
+	
+	@Test
+	void getNumberFromDigitsTest() {
+		int expectedNumber = 1234;
+		assertEquals(expectedNumber, Numbers.getNumberFromDigits(new int[] {1, 2, 3, 4}));
+	}
+	
+	@Test
+	void verifyTest() {
+		int id = IsraelIdentity.generateRandomId();
+		assertEquals(true, IsraelIdentity.verify(id));
+	}
+	
+	@Test
+	void addsNumberTest() {
+		int[] ar = {1, 2, 3, 4};
+		int[] SecondAr = {1, 2, 3, 4, 5};
+		assertArrayEquals(SecondAr, MyArrays.addsNumber(ar, 5));
+	}
+	
+	@Test
+	void removeNumberTest() {
+		int[] ar = {1, 2, 3, 4};
+		int[] SecondAr = {1, 2, 4};
+		assertArrayEquals(SecondAr, MyArrays.removeNumber(ar, 2));
+	}
+	
+	@Test
+	void insertSortedTest() {
+		int[] ar = {1, 2, 3, 4, 5, 6, 7};
+		int[] SecondAr = {1, 2, 3, 4, 4, 5, 6, 7,};
+		assertArrayEquals(SecondAr, MyArrays.insertSorted(ar, 4));
+	}
+	
 }
+	

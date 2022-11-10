@@ -17,11 +17,6 @@ private static final int N_BITS = 64;
 		if (checkNbit(nBit)) {
 			long mask = getMask(nBit);
 			res = (number & mask) == 0 ? 0 : 1;
-/*			if ((number & mask) == 0) {
-				res = 0;
-			} else {
-				res = 1;
-			} */
 		}
 		return res;
 	}
@@ -43,16 +38,9 @@ private static long getMask(int nBit) {
 	static public long setBitValue(long number, int nBit, boolean value) {
 		long res = -1;
 		if (checkNbit(nBit)) {
-			//if (value == true) {
 				long mask = getMask(nBit);
 				res = value ? number | mask : number & ~mask;
-			//long mask = 1 << nBit;
-			//res = number | mask;
-			} //else {
-				//long mask = ~(1 <<nBit);
-				//res = number & ~mask;
-		//}
-		//}
+			}
 		
 		return res;
 	}
@@ -68,16 +56,6 @@ private static long getMask(int nBit) {
 			long mask = getMask(nBit);
 			res = number ^ mask;
 		}
-			
-//			int value = getBitValue(number, nBit);
-//			if (value == 0) {
-//				long mask = 1 <<nBit;
-//				res = number | mask;
-//			} else {
-//				long mask = ~(1 <<nBit);
-//				res = number & mask;
-//			}		
-//		}
 		return res;
 	}
 	
