@@ -5,7 +5,20 @@ import org.junit.jupiter.api.Test;
 
 class PrimitivesTest {
 
-	
+	@Test
+	@Disabled
+	void dataTypeTest() {
+		int b = 10;
+		short a = 20000;
+		char c = 'd';
+		long l = (long) 10.1;
+		byte b1 = (byte) 1000;
+		a = (short) l;
+		float f = 10.2f;
+		int b2 = 0xfffffff1;
+
+		assertEquals(-15, b2);
+	}
 
 	@Test
 	@Disabled
@@ -72,15 +85,7 @@ class PrimitivesTest {
 		assertEquals(0, BitOperations.getBitValue(number, 63));
 	}
 
-	@Test
-	void digitsNumberTest() {
-		// TODO
-	}
-
-	@Test
-	void leadingZerosTest() {
-		// TODO
-	}
+	
 
 	@Test
 	@Disabled
@@ -107,6 +112,7 @@ class PrimitivesTest {
 	}
 
 	@Test
+	@Disabled
 	void bibarySearchTest() {
 		int ar[] = { 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 20, 40 };
 		assertEquals(-14, MyArrays.binarySearch(ar, 3));
@@ -137,7 +143,7 @@ class PrimitivesTest {
 	}
 
 	@Test
-
+@Disabled
 	void isOneSwapTestTrue() {
 		int ar1[] = { 10, 2, 3, 4, 1 };
 		int ar2[] = { 1, 2, 4, 3, 5, 10 };
@@ -158,12 +164,17 @@ class PrimitivesTest {
 		assertTrue(MyArrays.isOneSwapForSorted(ar8));
 		assertTrue(MyArrays.isOneSwapForSorted(ar9));
 	}
-	
 	@Test
-
-	void isSum2TestTrue() {
-		short ar1[] = {1, 3, 20, 4, 5, 6, 10};
-		assertTrue(MyArrays.isSum2(ar1, (short) 14));
+	void isSum2Test() {
+		short ar[] = {1, 2, 5, 4, 5, 100, 9, 0x7fff, 1};
+		assertTrue(MyArrays.isSum2(ar, (short)101));
+		assertTrue(MyArrays.isSum2(ar, (short)11));
+		assertTrue(MyArrays.isSum2(ar, (short)14));
+		assertFalse(MyArrays.isSum2(ar, (short)8));
+		assertFalse(MyArrays.isSum2(ar, (short)2000));
+		//assertTrue(MyArrays.isSum2(ar, (short)(0x7fff + 1)));
+		
 	}
+	
 
 }
