@@ -43,7 +43,8 @@ class ObjectTests {
 	void sortStringNumbersTest() {
 	String[] array1 = { "5", "-37", "15", "2", "22", "120", "118", "-110", "5", "2", "1", "0", "127", "-128", "1", "5" };
 	String[] array2 = { "-128", "-110", "-37", "0", "1", "1", "2", "2", "5", "5", "5", "15", "22", "118", "120", "127" };
-	assertArrayEquals(array2, Strings.sortStringNumbers(array1));
+	Strings.sortStringNumbers(array1);
+	assertArrayEquals(array2, array1);
 	}
 
 }

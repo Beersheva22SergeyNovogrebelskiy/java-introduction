@@ -33,7 +33,7 @@ public class Strings {
 	return res;
 }
 	
-	public static String[] sortStringNumbers(String[] arString) {
+	public static void sortStringNumbers(String[] arString) {
 		String[] res = new String[arString.length];
 		int[] helper = new int[256];
 		int index = 0;
@@ -45,12 +45,12 @@ public class Strings {
 			if(helper[i] > 0) {
 				while(helper[i] > 0) {
 					temp = Integer.toString(i - 128);
-					res[index] = temp;
+					arString[index] = temp;
 					index++;
 					helper[i]--;
 				}
 			}
 		}
-		return res;
+		
 	}
 }
