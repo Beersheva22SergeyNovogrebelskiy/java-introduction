@@ -34,7 +34,6 @@ public class Strings {
 }
 	
 	public static void sortStringNumbers(String[] arString) {
-		String[] res = new String[arString.length];
 		int[] helper = new int[256];
 		int index = 0;
 		String temp;
@@ -50,7 +49,16 @@ public class Strings {
 					helper[i]--;
 				}
 			}
-		}
-		
+		}	
+	}
+	
+	public static String javaNameExp() {
+		return "[a-zA-Z$][\\w$]*|_[\\w$]+";
+	}
+	public static String ipV4Octet() {
+		return "\\d|\\d\\d|[0-1]\\d\\d|2[0-4]\\d|25[0-5]";
+	}
+	public static String ipV4() {
+		return "((" + ipV4Octet() +")\\.){3}(" + ipV4Octet() + ")";
 	}
 }
